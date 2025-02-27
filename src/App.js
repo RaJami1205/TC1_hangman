@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Bienvenido a React
+          Juego del Ahorcado
         </a>
       </header>
     </div>
