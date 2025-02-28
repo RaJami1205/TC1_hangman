@@ -1,12 +1,20 @@
 import '../styles/gameScreen.css';
 
-export default function GameScreen({ players }) {
+export default function GameScreen({ players = { player1: "Jugador 1", player2: "Jugador 2" } }) {
   return (
     <div className="game-screen">
-      <div className="container">
-        <h1 className="title">Interfaz del Juego Principal</h1>
-        <p className="subtitle">Jugador 1: {players.player1}</p>
-        <p className="subtitle">Jugador 2: {players.player2}</p>
+      {/* Sección Jugador 1 */}
+      <div className="player-section">
+        <h2 className="player-title">{players.player1}</h2>
+        <div className="player-box">
+        </div>
+      </div>
+
+      {/* Sección Jugador 2 */}
+      <div className="player-section">
+        <h2 className="player-title">{players.player2}</h2>
+        <div className="player-box">
+        </div>
       </div>
     </div>
   );
