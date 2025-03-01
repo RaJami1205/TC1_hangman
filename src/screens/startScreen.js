@@ -16,6 +16,10 @@ export default function StartScreen({ setPlayers }) {
     }
   };
 
+  const handleHistory = () => {
+    navigate("/history");
+  };
+
   return (
     <div className="start-screen">
       <div className="container">
@@ -37,6 +41,9 @@ export default function StartScreen({ setPlayers }) {
         />
         <button onClick={handleStart} className="start-button">
           Comenzar Juego
+        </button>
+        <button onClick={handleHistory} className="start-button">
+          Ver Historial
         </button>
       </div>
     </div>

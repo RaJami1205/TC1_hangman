@@ -1,0 +1,59 @@
+.history-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #6a0dad, #4c6e9f);
+  }
+  
+  .container {
+    background-color: #2d2d2d;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #f87171;
+    margin-bottom: 1.5rem;
+  }
+  
+  .subtitle {
+    color: #e4e4e7;
+    margin-bottom: 1.5rem;
+    font-size: 1.125rem;
+  }
+  
+  .history-list {
+    width: 100%;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  
+  .history-item {
+    background-color: #3a3a3c;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    color: white;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .history-item p {
+    margin: 5px 0;
+  }
+  
+  .history-item strong {
+    color: #f87171;
+  }
+  

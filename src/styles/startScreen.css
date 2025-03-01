@@ -53,7 +53,7 @@
   }
   
   .start-button {
-    background-color: #f87171; 
+    background-color: #f87171;
     color: white;
     padding: 1rem 2rem;
     border-radius: 8px;
@@ -62,14 +62,16 @@
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin-bottom: 1rem;
   }
   
   .start-button:hover {
-    background-color: #e53e3e; 
-    transform: scale(1.05); 
+    background-color: #e53e3e;
+    transform: scale(1.05);
   }
   
   .start-button:active {
-    background-color: #c53030; 
+    background-color: #c53030;
   }
+  
   
