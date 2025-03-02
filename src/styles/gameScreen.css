@@ -4,6 +4,7 @@
   align-items: center;
   height: 100vh;
   background: linear-gradient(to bottom right, #1e3a8a, #9333ea); 
+  overflow: hidden; 
 }
 
 .player-section {
@@ -14,6 +15,7 @@
   width: 50%;
   height: 100%;
   padding: 2rem;
+  overflow: hidden; 
 }
 
 .player-title {
@@ -25,11 +27,103 @@
 }
 
 .player-box {
-  background-color: #2d3033;
-  padding: 6rem;
-  border-radius: 12px;
-  width: 80%;
-  text-align: center;
-  color: white;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  width: 800px;  
+  height: 800px; 
+  background-color: #1b1a1a; 
+  border: 2px solid #000;
+  border-radius: 5px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hangman {
+  position: relative;
+  width: 60px; 
+  height: 150px;
+}
+
+.hangman-part {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.hangman-part.show {
+  opacity: 1;
+}
+
+.head {
+  top: -200px;
+  width: 60px;
+  height: 60px;
+  background-color: #f87171;
+  border-radius: 50%;
+  border: 2px solid #f87171;
+}
+
+.body {
+  top: -125px;
+  left: 22px;
+  width: 15px;
+  height: 150px;
+  background-color: #f87171;
+}
+
+.leftArm {
+  top: -100px;
+  left: 30px;
+  width: 80px;
+  height: 10px;
+  background-color: #f87171;
+}
+
+.rightArm {
+  top: -100px;
+  right: 30px;
+  width: 80px;
+  height: 10px;
+  background-color: #f87171;
+}
+
+.leftLeg {
+  top: 15px;
+  left: 30px;
+  width: 100px;
+  height: 10px;
+  background-color: #f87171;
+}
+
+.rightLeg {
+  top: 15px;
+  right: 30px;
+  width: 100px;
+  height: 10px;
+  background-color: #f87171;
+}
+
+.player-box::before,
+.player-box::after {
+  content: '';
+  position: absolute;
+  background-color: #f87171;
+}
+
+.player-box::before {
+  top: -20px;   
+  left: 50.2%;    
+  transform: translateX(-50%); 
+  width: 20px;
+  height: 150px; 
+}
+
+.player-box::after {
+  top: -20px;   
+  left: 0px;    
+  width: 70px; 
+  height: 10px;
 }
