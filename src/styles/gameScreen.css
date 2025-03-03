@@ -39,6 +39,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  padding-bottom: 20px;
 }
 
 .hangman {
@@ -58,7 +59,7 @@
 }
 
 .head {
-  top: -200px;
+  top: 100px;
   width: 60px;
   height: 60px;
   background-color: #f87171;
@@ -67,43 +68,47 @@
 }
 
 .body {
-  top: -125px;
+  top: 175px;
   left: 22px;
   width: 15px;
-  height: 150px;
+  height: 112px;
   background-color: #f87171;
 }
 
 .leftArm {
-  top: -100px;
+  top: 200px;
   left: 30px;
   width: 80px;
   height: 10px;
   background-color: #f87171;
+  transform: rotate(30deg);
 }
 
 .rightArm {
-  top: -100px;
+  top: 200px;
   right: 30px;
   width: 80px;
   height: 10px;
   background-color: #f87171;
+  transform: rotate(-30deg);
 }
 
 .leftLeg {
-  top: 15px;
-  left: 30px;
+  top: 314px;
+  left: 14px;
   width: 100px;
   height: 10px;
   background-color: #f87171;
+  transform: rotate(50deg);
 }
 
 .rightLeg {
-  top: 15px;
-  right: 30px;
+  top: 314px;
+  right: 14px;
   width: 100px;
   height: 10px;
   background-color: #f87171;
+  transform: rotate(-50deg);
 }
 
 .player-box::before,
@@ -126,4 +131,39 @@
   left: 0px;    
   width: 70px; 
   height: 10px;
+}
+
+.word-and-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 460px; /* Añadido para separar los botones de la parte superior */
+}
+
+.word-and-buttons h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #f87171;
+}
+
+.word-and-buttons button {
+  margin: 5px;
+  padding: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background-color: #9333ea;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.word-and-buttons button:hover {
+  background-color: #f87171;
+}
+
+.word-and-buttons p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f87171;
 }
