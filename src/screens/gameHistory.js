@@ -1,24 +1,55 @@
-import React from "react";
-import "../styles/gameHistory.css";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import "../styles/gameHistory.css"; // Importar estilos
 
-export default function GameHistory({ history = [] }) {
+export default function Historial() {
+  const [historial, setHistorial] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const partidasGuardadas = JSON.parse(localStorage.getItem("historial")) || [];
+    setHistorial(partidasGuardadas);
+  }, []);
+
+  const borrarHistorial = () => {
+    localStorage.removeItem("historial");
+    setHistorial([]);
+  };
+
+  const formatTime = (seconds) => {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
+  };
+
   return (
-    <div className="history-screen">
-      <div className="container">
-        <h1 className="title">Historial de Partidas</h1>
-        <p className="subtitle">Revisa los resultados de partidas anteriores</p>
-        <div className="history-list">
-          {history.length > 0 ? (
-            history.map((game, index) => (
-              <div key={index} className="history-item">
-                <p><strong>{game.date}</strong></p>
-                <p>{game.player1} vs {game.player2}</p>
-                <p><strong>Ganador:</strong> {game.winner}</p>
+    <div className="historial-screen">
+      <div className="historial-container">
+        <h2 className="historial-title">Historial de Partidas</h2>
+
+        {historial.length === 0 ? (
+          <p className="historial-empty">No hay partidas guardadas.</p>
+        ) : (
+          <div className="historial-list">
+            {historial.map((partida, index) => (
+              <div key={index} className="historial-item">
+                <strong>{partida.player1}</strong> vs <strong>{partida.player2}</strong>
+                <br />
+                <span>Resultado: {partida.resultado}</span>
+                <br />
+                <span>Tiempo transcurrido: {formatTime(partida.tiempo)}</span>
               </div>
-            ))
-          ) : (
-            <p className="subtitle">No hay partidas registradas.</p>
-          )}
+            ))}
+          </div>
+        )}
+
+        <div className="historial-buttons">
+          <button className="historial-button" onClick={borrarHistorial}>
+            Borrar Historial
+          </button>
+          <button className="historial-button" onClick={() => navigate("/")}>
+            Volver al Inicio
+          </button>
         </div>
       </div>
     </div>

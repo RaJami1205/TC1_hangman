@@ -26,6 +26,16 @@
   margin-bottom: 1rem;
 }
 
+.round-display {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fdfbfb;
+}
+
 .player-box {
   position: relative;
   width: 800px;  
@@ -166,4 +176,16 @@
   font-size: 1.5rem;
   font-weight: bold;
   color: #f87171;
+}
+
+.time-display {
+  position: absolute;
+  top: 10px;
+  right: 20px; 
+  font-size: 1rem;  /* Tamaño más pequeño */
+  font-weight: bold;
+  color: #fdfbfb;
+  background-color: rgba(0, 0, 0, 0.5); 
+  padding: 5px 10px;  /* Espaciado más compacto */
+  border-radius: 5px;
 }
